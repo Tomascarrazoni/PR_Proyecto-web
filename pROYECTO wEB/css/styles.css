@@ -1,0 +1,270 @@
+
+/* ===== Configuración General ===== */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif; /* Fuente retrofuturista */
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrado horizontal */
+  justify-content: center; /* Centrado vertical */
+  min-height: 100vh; /* Asegura altura completa */
+  text-align: center; /* Alinea texto */
+  max-width: 768px; /* Ancho máximo para móviles */
+  margin: 0 auto; /* Centrar contenido en pantallas grandes */
+  overflow-x: hidden; /* Evitar desbordamientos horizontales */
+  overflow-wrap: break-word; /* Asegura que el texto no se desborde */
+}
+
+/* ===== Encabezado ===== */
+header {
+  display: flex;
+  align-items: center; /* Alineación vertical centrada */
+  justify-content: space-between; /* Espacio entre logo y menú */
+  background-color: #111; /* Fondo oscuro */
+  padding: 10px 20px; /* Espaciado interno */
+  border-bottom: 2px solid #FFD700; /* Línea decorativa dorada */
+  width: 100%;
+  box-sizing: border-box; /* Incluye padding en el ancho */
+}
+
+header .logo {
+  display: flex;
+  align-items: center; /* Centrado vertical del logo */
+  gap: 10px; /* Espaciado entre logo y texto */
+}
+
+header .logo img {
+  max-width: 50px; /* Tamaño máximo del logo */
+  height: auto; /* Mantener proporción */
+}
+
+header .logo span {
+  font-size: 20px;
+  color: #FFD700; /* Color dorado */
+  font-weight: bold;
+}
+
+header nav {
+  flex-grow: 1; /* El menú ocupa el espacio sobrante */
+  display: flex;
+  justify-content: center; /* Centra los enlaces horizontalmente */
+  gap: 20px; /* Espaciado entre los enlaces */
+  flex-wrap: wrap; /* Enlaces en varias líneas si es necesario */
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase; /* Texto en mayúsculas */
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+}
+
+header nav a:hover {
+  background-color: #FFD700;
+  color: #000;
+}
+
+/* ===== Sección Introductoria ===== */
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrado horizontal */
+  justify-content: center; /* Centrado vertical */
+  padding: 40px 20px; /* Espaciado interno */
+  text-align: center;
+  overflow-wrap: break-word; /* Asegura que el texto no se desborde */
+}
+
+.intro h1 {
+  font-size: 1.5rem; /* Tamaño adaptado para móviles */
+  color: #FFD700; /* Texto dorado */
+  margin: 0 0 15px 0; /* Margen solo inferior */
+  line-height: 1.5; /* Mejora legibilidad */
+}
+
+.intro p {
+  font-size: 1rem;
+  margin: 0 0 20px 0; /* Separación inferior */
+}
+
+.intro a.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin-top: 10px;
+  background-color: #FFD700;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.intro a.btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* ===== Sección Películas ===== */
+.peliculas {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrado horizontal */
+  justify-content: center; /* Centrado vertical */
+  padding: 20px;
+  text-align: center;
+  overflow-wrap: break-word; /* Asegura que el texto no se desborde */
+}
+
+.peliculas h2 {
+  color: #FFD700;
+  margin-bottom: 20px;
+}
+
+.peliculas .galeria {
+  display: grid;
+  grid-template-columns: 1fr; /* Una sola columna para móviles */
+  gap: 20px;
+  justify-items: center; /* Centra cada elemento del grid */
+}
+
+.peliculas article {
+  text-align: center;
+}
+
+.peliculas img {
+  max-width: 100%;
+  border: 2px solid #FFD700; /* Borde dorado */
+  border-radius: 10px;
+}
+
+/* ===== Ajustes Responsivos ===== */
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+    padding: 0 10px; /* Ajuste de padding */
+  }
+
+  header nav {
+    gap: 10px; /* Espaciado más compacto */
+  }
+
+  h1, h2, h3, p {
+    font-size: 1rem; /* Tamaños de texto optimizados para móviles */
+    overflow-wrap: break-word; /* Asegura que el texto no se desborde */
+  }
+
+  .intro h1, .programacion h2 {
+    font-size: 1.5rem; /* Titulares más grandes pero adaptados */
+  }
+
+  .peliculas .galeria {
+    gap: 10px; /* Espaciado más compacto */
+  }
+}
+/* ===== Sección Programación ===== */
+.programacion {
+  padding: 20px;
+  text-align: center;
+}
+
+.programacion h2 {
+  color: #FFD700;
+  margin-bottom: 20px;
+}
+
+.programacion .evento {
+  margin-bottom: 20px; /* Espaciado entre eventos */
+  padding: 10px; /* Espaciado interno para mayor claridad */
+  border-bottom: 1px solid #FFD700; /* Línea decorativa entre eventos */
+}
+
+.programacion .evento:last-child {
+  border-bottom: none; /* Elimina la línea decorativa del último evento */
+}
+
+.programacion .evento .titulo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+
+.programacion .evento span {
+  display: block;
+  margin: 5px 0; /* Espaciado interno entre los elementos de un evento */
+}
+
+/* ===== Sección Película Información ===== */
+.pelicula-info {
+  text-align: center;
+  padding: 20px;
+}
+
+.pelicula-info h2 {
+  color: #FFD700;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.pelicula-info .poster img {
+  max-width: 100%;
+  border: 2px solid #FFD700;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.pelicula-info .descripcion {
+  font-size: 1rem;
+  margin: 15px 0;
+  color: #fff;
+}
+
+.pelicula-info .horarios {
+  display: flex;
+  justify-content: center; /* Centrar horarios */
+  align-items: center;
+  gap: 10px; /* Espaciado entre horarios */
+}
+
+.pelicula-info .horarios span {
+  position: relative;
+  font-size: 1rem;
+  color: #FFD700;
+  padding: 0 10px; /* Espaciado interno para separar texto de las líneas */
+}
+
+.pelicula-info .horarios span:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #FFD700; /* Color de la línea */
+  top: 0;
+  transform: translateX(50%);
+}
+/* ===== Líneas Horizontales en Películas ===== */
+.galeria hr {
+  border: none; /* Quita el estilo predeterminado */
+  border-top: 2px solid #FFD700; /* Línea dorada */
+  margin: 15px 0; /* Espaciado alrededor de la línea */
+  width: 80%; /* Ajusta el ancho de la línea */
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ===== Estilo para los carteles de películas ===== */
+.galeria img {
+  width: 100%; /* Asegura que ocupen todo el ancho disponible del contenedor */
+  max-width: 150px; /* Tamaño máximo (ajústalo según necesites) */
+  height: auto; /* Mantiene la proporción original de la imagen */
+  object-fit: cover; /* Ajusta la imagen para cubrir el área si es necesario */
+  border-radius: 8px; /* Opcional: redondea las esquinas */
+  border: 2px solid #FFD700; /* Borde dorado */
+}
